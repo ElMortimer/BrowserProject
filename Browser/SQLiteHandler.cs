@@ -15,7 +15,7 @@ namespace Browser
     {
         private SQLiteHandler() { }
         private static SQLiteHandler _instance;
-        private static readonly object _lock = new object();
+        private static readonly object _lock = new object(); //sincronizeaza threadurile ?
 
         private SQLiteConnection connection;
 
@@ -25,6 +25,7 @@ namespace Browser
             {
                 lock (_lock)
                 {
+                    //primul thread care ajunge aici creeaza instanta
                     if(_instance == null)
                     {
                         _instance = new SQLiteHandler();

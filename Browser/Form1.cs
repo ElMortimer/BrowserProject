@@ -64,6 +64,7 @@ namespace Browser
             webBrowser1.GoHome();
         }
 
+        //orice browser are nevoie de buton de refresh
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             webBrowser1.Refresh();
@@ -86,6 +87,7 @@ namespace Browser
 
         }
 
+        // partea asta nu stiu daca asa trebuia facuta dar mi s-a parut cel mai usor mod
         private async void menuKeywordViewDelete_Click(object sender, EventArgs e)
         {
             Form f = new Form();
@@ -128,7 +130,7 @@ namespace Browser
             {
                 combo.Items.Add(keyword);
             }
-
+            // functie lamba cool, adauga event handler nou (functie inline?)
             btnDelete.Click += (s, ev) =>
             {
                 if (combo.SelectedItem == null)
